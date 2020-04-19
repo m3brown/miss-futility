@@ -15,7 +15,7 @@ repos:
     hooks:
       - id: prettier
 
-  # various code cleanup tasks
+  # standard cleanup tasks
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v2.4.0
     hooks:
@@ -26,6 +26,8 @@ repos:
       - id: name-tests-test
       - id: requirements-txt-fixer
       - id: trailing-whitespace
+      - id: check-yaml
+      - id: pretty-format-json
 
   # python import sorting, remove unused imports
   - repo: https://github.com/sqlalchemyorg/zimports/
