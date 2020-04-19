@@ -1,0 +1,8 @@
+- id: build
+  cmd: docker build -t missfutility:latest .
+
+- id: start
+  cmd: docker run -p 5000:5000 missfutility
+
+- id: lint
+  cmd: pre-commit run --all-files
