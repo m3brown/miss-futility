@@ -44,3 +44,9 @@ repos:
     rev: v0.13.1
     hooks:
       - id: gitlint
+
+  # Dockerfile linting
+  - repo: https://github.com/pryorda/dockerfilelint-precommit-hooks
+    rev: v0.1.0
+    hooks:
+      - id: dockerfilelint
