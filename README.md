@@ -9,7 +9,6 @@ The repo name is a play on Miss Utility, a service in the mid-atlantic region fo
 The Miss Utility slogan is "Before you dig, every dig."
 
 ### Miss Utility links
-
 - https://www.missutility.net
 - https://va811.com/
 
@@ -36,7 +35,7 @@ It also has a .pre-commit-config.yaml that defines several pre-commit hooks that
 
 To fix the formatting in this repo:
 
-```
+```bash
 pip install pre-commit
 pre-commit install
 pre-commit run --all-files

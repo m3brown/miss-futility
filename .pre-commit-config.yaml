@@ -23,11 +23,11 @@ repos:
       - id: detect-aws-credentials
       - id: end-of-file-fixer
       - id: mixed-line-ending
-      - id: name-tests-test
       - id: requirements-txt-fixer
       - id: trailing-whitespace
       - id: check-yaml
       - id: pretty-format-json
+      - id: check-executables-have-shebangs
 
   # python import sorting, remove unused imports
   - repo: https://github.com/sqlalchemyorg/zimports/
@@ -41,12 +41,6 @@ repos:
     hooks:
       - id: markdownlint
 
-  # commit message linting
-  - repo: https://github.com/jorisroovers/gitlint
-    rev: v0.13.1
-    hooks:
-      - id: gitlint
-
   # Dockerfile linting
   - repo: https://github.com/pryorda/dockerfilelint-precommit-hooks
     rev: v0.1.0
@@ -59,3 +53,16 @@ repos:
     hooks:
       - id: validate-html
         args: [--remove-mustaches, --mustache-remover=jinja2]
+
+  # Security: static code analysis
+  - repo: https://github.com/PyCQA/bandit
+    rev: 1.6.2
+    hooks:
+      - id: bandit
+        args: [-x, tests]
+
+  # Security: dependency vulnerability check
+  - repo: https://github.com/Lucas-C/pre-commit-hooks-safety
+    sha: v1.1.0
+    hooks:
+      - id: python-safety-dependencies-check

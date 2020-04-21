@@ -6,3 +6,8 @@
 
 - id: lint
   cmd: pre-commit run --all-files
+
+- id: test
+  cmd: 
+  - plz build
+  - docker run missfutility -m pytest
