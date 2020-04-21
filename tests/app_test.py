@@ -1,5 +1,4 @@
 from app import app
-from bs4 import BeautifulSoup
 
 
 def test_app_returns_200():
@@ -22,5 +21,4 @@ def test_app_page_has_expected_text():
     result = client.get("/")
 
     # Assert
-    header = BeautifulSoup(result.data, features="html.parser").h1.string
-    assert header == "Before you commit, every commit!"
+    assert "Before you commit, every commit!" in str(result.data)
